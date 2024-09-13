@@ -1,0 +1,11 @@
+<asl-google-signin-button type='icon' size='medium' *ngIf="!user"></asl-google-signin-button>
+
+<div *ngIf="user">
+    <img [src]="user.photoUrl" alt="User Photo">
+    <div>
+        <h4>{{ user.name }}</h4>
+        <p>{{ user.email }}</p>
+    </div>
+    <!-- Mostrar el contador -->
+    <p>Serás redirigido en {{ counter }} segundos...</p>
+</div>
