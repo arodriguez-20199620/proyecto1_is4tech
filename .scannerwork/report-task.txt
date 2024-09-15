@@ -1,0 +1,6 @@
+projectKey=proyecto1_is4tech
+serverUrl=http://localhost:9000
+serverVersion=10.6.0.92116
+dashboardUrl=http://localhost:9000/dashboard?id=proyecto1_is4tech
+ceTaskId=4e18ab54-c0f0-4cdd-a524-8a6bcaa2bfe6
+ceTaskUrl=http://localhost:9000/api/ce/task?id=4e18ab54-c0f0-4cdd-a524-8a6bcaa2bfe6
