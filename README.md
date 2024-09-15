@@ -1,6 +1,6 @@
 # Proyecto1Is4tech
 
-![Imagen-1](https://i.imgur.com/RnvFpbgl.png)
+![Imagen-1](https://i.imgur.com/RnvFpbg.png)
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.15.
