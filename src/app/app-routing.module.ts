@@ -4,8 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'dogs', title: 'Perros',loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
-  { path: 'login', loadChildren: () => import('./security/security.module').then(m => m.SecurityModule) },
+  { path: 'dogs', title: 'Perros', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'login', title: 'Login',  loadChildren: () => import('./security/security.module').then(m => m.SecurityModule) },
 
 ];
 

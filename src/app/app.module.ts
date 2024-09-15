@@ -1,42 +1,43 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
-import {
-  GoogleLoginProvider,
-} from '@abacritt/angularx-social-login';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SocialAuthService, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { GoogleSigninComponent } from './security/auth/google-signin/google-signin.component';
+import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
+import { HttpClientTestingModule } from '@angular/common/http/testing'; // Importa el módulo de pruebas HTTP
 import { environment } from 'src/environments/environment.development';
+import { FormsModule } from '@angular/forms'; // Si usas ngModel en el componente
 
-@NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule, ReactiveFormsModule, SocialLoginModule, AppRoutingModule, HttpClientModule
-  ],
-  providers: [
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              environment.googleAuthClientId
-            )
+describe('GoogleSigninComponent', () => {
+  let component: GoogleSigninComponent;
+  let fixture: ComponentFixture<GoogleSigninComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [GoogleSigninComponent],
+      imports: [HttpClientTestingModule, FormsModule], // Añade HttpClientTestingModule y FormsModule si es necesario
+      providers: [
+        SocialAuthService,
+        {
+          provide: 'SocialAuthServiceConfig',
+          useValue: {
+            autoLogin: false,
+            providers: [
+              {
+                id: GoogleLoginProvider.PROVIDER_ID,
+                provider: new GoogleLoginProvider(
+                  environment.googleAuthClientId
+                ),
+              },
+            ],
           },
-        ],
-        onError: (err) => {
-          console.error(err);
-        }
-      } as SocialAuthServiceConfig,
-    }
-  ],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+        },
+      ],
+    });
+    fixture = TestBed.createComponent(GoogleSigninComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
