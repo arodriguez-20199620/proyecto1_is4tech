@@ -1,7 +1,16 @@
 # Proyecto1Is4tech
 
+## Imagen del pre-commit
 ![Imagen-1](https://i.imgur.com/RnvFpbg.png)
 
+## Imagen del pre-push
+![Imagen-2](https://i.imgur.com/rL3lkBi.png)
+
+## Imagen de los analisis de sonar
+![Imagen-2](https://i.imgur.com/uDwu5ET.png)
+
+## Imagen de las configuraciones de sonar
+![Imagen-2](https://i.imgur.com/8LyQxCZ.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.15.
 
