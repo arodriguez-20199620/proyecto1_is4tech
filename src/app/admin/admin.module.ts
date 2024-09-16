@@ -1,9 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DogsComponent } from './dogs/dogs.component';
-import { AdminRoutingModule } from './admin-routing.module';
 import { FormsModule } from '@angular/forms';
-import { SharedModule } from '../shared/shared.module'; 
+import { SharedModule } from '../shared/shared.module';
+import { Routes, RouterModule } from '@angular/router';
+
+
+const routes: Routes = [
+  {
+    path: 'dogs',
+    title: 'perros',
+    component: DogsComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -12,8 +21,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     FormsModule,
     CommonModule,
-    AdminRoutingModule,
-    SharedModule 
-  ]
+    SharedModule,
+    RouterModule.forChild(routes)
+  ], exports: [RouterModule]
 })
 export class AdminModule { }

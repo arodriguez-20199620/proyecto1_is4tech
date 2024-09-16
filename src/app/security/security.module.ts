@@ -1,8 +1,16 @@
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from "@angular/router";
 import { CommonModule } from '@angular/common';
-import { GoogleSigninComponent } from './auth/google-signin/google-signin.component';
-import { SecurityRoutingModule } from './security-routing.module';
+import { GoogleSigninComponent } from './google-signin/google-signin.component';
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+
+const routes: Routes = [
+  {
+    path: 'login',
+    title: 'Login',
+    component: GoogleSigninComponent
+  }
+]
 @NgModule({
   declarations: [
     GoogleSigninComponent
@@ -10,7 +18,8 @@ import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
   imports: [
     CommonModule,
     GoogleSigninButtonModule,
-    SecurityRoutingModule,
-  ]
+    RouterModule.forChild(routes)
+  ],
+  exports: [RouterModule]
 })
 export class SecurityModule { }
