@@ -1,13 +1,13 @@
-// src/app/admin/dogs.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DogsService {
-  private apiUrl = 'https://dog.ceo/api/breeds/image/random';
+  private apiUrl = environment.URL_DOGS;
 
   constructor(private http: HttpClient) { }
 

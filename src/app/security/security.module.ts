@@ -1,16 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from "@angular/router";
 import { CommonModule } from '@angular/common';
 import { GoogleSigninComponent } from './google-signin/google-signin.component';
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import { SecurityRoutingModule } from './security-routing.module'; // Importar módulo de rutas
 
-const routes: Routes = [
-  {
-    path: 'login',
-    title: 'Login',
-    component: GoogleSigninComponent
-  }
-]
 @NgModule({
   declarations: [
     GoogleSigninComponent
@@ -18,8 +11,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     GoogleSigninButtonModule,
-    RouterModule.forChild(routes)
-  ],
-  exports: [RouterModule]
+    SecurityRoutingModule // Aquí importas el módulo de rutas
+  ]
 })
 export class SecurityModule { }
