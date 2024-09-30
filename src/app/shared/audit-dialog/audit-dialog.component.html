@@ -1,0 +1,28 @@
+<div class="p-4 bg-white rounded-lg shadow-md w-80">
+  <div class="flex items-center space-x-2">
+    <i class="fas fa-info-circle text-indigo-600"></i>
+    <h2 class="text-lg font-bold text-indigo-900">AUDITORÍA</h2>
+  </div>
+
+  <div class="mt-4">
+    <h3 class="text-indigo-900 font-bold">CREACIÓN</h3>
+    <p><strong>Usuario:</strong> {{ userCreated || 'N/A' }}</p>
+    <p>
+      <strong>Fecha:</strong>
+      {{ dateCreated ? (dateCreated | date: 'dd/MM/yyyy HH:mm:ss') : 'N/A' }}
+    </p>
+  </div>
+
+  <div class="mt-4">
+    <h3 class="text-indigo-900 font-bold">ÚLTIMA MODIFICACIÓN</h3>
+    <p><strong>Usuario:</strong> {{ userUpdated || 'N/A' }}</p>
+    <p>
+      <strong>Fecha:</strong>
+      {{ dateUpdated ? (dateUpdated | date: 'dd/MM/yyyy HH:mm:ss') : 'N/A' }}
+    </p>
+  </div>
+
+  <button class="mt-4 w-full py-2 bg-indigo-900 text-white rounded">
+    Cerrar
+  </button>
+</div>

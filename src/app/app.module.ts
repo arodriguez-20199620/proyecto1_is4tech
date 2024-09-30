@@ -10,13 +10,14 @@ import {
 } from '@abacritt/angularx-social-login';
 
 import { environment } from 'src/environments/environment.development';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    BrowserModule, ReactiveFormsModule, SocialLoginModule, AppRoutingModule, HttpClientModule
+    BrowserModule, ReactiveFormsModule, SocialLoginModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule
   ],
   providers: [
     {

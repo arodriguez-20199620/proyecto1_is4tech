@@ -1,10 +1,23 @@
 <div>
-  <img *ngIf="dogImage" [src]="dogImage" alt="Dog Image">
+  <img *ngIf="dogImage" [src]="dogImage" alt="Dog Image" />
   <button (click)="getNewDogImage()">Get New Dog Image</button>
 </div>
 
 <form>
-  <textarea [(ngModel)]="descripcion" appWhiteSpace placeholder="Descripción" name="descripcion"></textarea>
+  <textarea
+    [(ngModel)]="descripcion"
+    appWhiteSpace
+    placeholder="Descripción"
+    name="descripcion"
+  ></textarea>
 </form>
 
 <p><strong>Descripción ingresada:</strong> {{ descripcion }}</p>
+<button (click)="showAudit()">Mostrar Auditoría</button>
+
+<app-audit-dialog *ngIf="showAuditDetails"
+  [userCreated]="auditData.UserCreated"
+  [dateCreated]="auditData.DateCreated"
+  [userUpdated]="auditData.UserUpdated"
+  [dateUpdated]="auditData.DateUpdated">
+</app-audit-dialog>

@@ -36,7 +36,7 @@ export class GoogleSigninComponent implements OnInit, OnDestroy {
 
     setTimeout(() => {
       clearInterval(this.interval); 
-      this.router.navigate(['/dogs']);
+      this.router.navigate(['service/dogs']);
     }, 5000);
   }
 
